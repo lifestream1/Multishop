@@ -36,27 +36,28 @@ CREATE TABLE IF NOT EXISTS `product` (
   `description` varchar(255) DEFAULT NULL,
   `keywords` varchar(255) DEFAULT NULL,
   `img` varchar(255) NOT NULL DEFAULT 'no-image.png',
-  `estimation` int(10) NOT NULL DEFAULT '0'
+  `estimation` decimal(2,1) NOT NULL DEFAULT '0',
+  `count_estimate` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `product`
 --
 
-INSERT INTO `product` (`id`, `category_id`, `title`, `content`, `price`, `old_price`, `description`, `keywords`, `img`, `estimation`) VALUES
-(1, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '123.00', '0.00', NULL, NULL, '5.jpg', 100),
-(2, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '55.00', '80.00', NULL, NULL, '6.jpg', 90),
-(3, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '130.00', '150.00', NULL, NULL, '7.jpg', 75),
-(4, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '75.00', '97.00', NULL, NULL, '8.jpg', 60),
-(5, 4, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '229.00', '300.00', NULL, NULL, '9.jpg', 100),
-(6, 5, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '159.00', '180.00', NULL, NULL, '10.jpg', 85),
-(7, 5, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '59.00', '80.00', NULL, NULL, '11.jpg', 60),
-(8, 4, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '49.00', '60.00', NULL, NULL, '12.jpg', 80),
-(9, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '123.00', '0.00', NULL, NULL, '5.jpg', 100),
-(10, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '55.00', '80.00', NULL, NULL, '6.jpg', 90),
-(11, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '130.00', '150.00', NULL, NULL, '7.jpg', 75),
-(12, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '75.00', '97.00', NULL, NULL, '8.jpg', 60),
-(13, 4, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '229.00', '300.00', NULL, NULL, '9.jpg', 100);
+INSERT INTO `product` (`id`, `category_id`, `title`, `content`, `price`, `old_price`, `description`, `keywords`, `img`, `estimation`, `count_estimate`) VALUES
+(1, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '123.00', '0.00', NULL, NULL, '5.jpg', 5, 35),
+(2, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '55.00', '80.00', NULL, NULL, '6.jpg', 3.5, 10),
+(3, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '130.00', '150.00', NULL, NULL, '7.jpg', 0, 0),
+(4, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '75.00', '97.00', NULL, NULL, '8.jpg', 4, 32),
+(5, 4, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '229.00', '300.00', NULL, NULL, '9.jpg', 4.8, 5),
+(6, 5, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '159.00', '180.00', NULL, NULL, '10.jpg', 3.3, 42),
+(7, 5, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '59.00', '80.00', NULL, NULL, '11.jpg', 2.5, 0),
+(8, 4, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '49.00', '60.00', NULL, NULL, '12.jpg', 1, 1),
+(9, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '123.00', '0.00', NULL, NULL, '5.jpg', 0, 0),
+(10, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '55.00', '80.00', NULL, NULL, '6.jpg', 4.5, 7),
+(11, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '130.00', '150.00', NULL, NULL, '7.jpg', 4.2, 15),
+(12, 1, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '75.00', '97.00', NULL, NULL, '8.jpg', 3.3, 21),
+(13, 4, 'Product Name Goes Here', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '229.00', '300.00', NULL, NULL, '9.jpg', 5, 14);
 
 
 --

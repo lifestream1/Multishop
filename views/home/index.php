@@ -294,12 +294,22 @@
                             </h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(<?= $product->estimation ?>)</small>
+                            <div class="rating">
+                                <div class="rating__body">
+                                    <div class="rating__active" style="width:<?= $product->estimation*20 ?>%;"></div>
+                                    <div class="rating__items">
+                                        <input type="radio" class="rating__item" value="1" name="rating">
+                                        <input type="radio" class="rating__item" value="2" name="rating">
+                                        <input type="radio" class="rating__item" value="3" name="rating">
+                                        <input type="radio" class="rating__item" value="4" name="rating">
+                                        <input type="radio" class="rating__item" value="5" name="rating">
+                                    </div>
+                                </div>
+                                <?php if((float)$product->estimation): ?>
+                                <div class="rating__value"><?= $product->estimation ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <small>(<?= $product->count_estimate ?>)</small>
                         </div>
                     </div>
                 </div>
